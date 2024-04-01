@@ -1,0 +1,242 @@
+{
+  "hash": "435368387",
+  "bot": {
+    "id": "9056a814-6a91-473b-9e31-0d6e4785225a",
+    "name": "LP Brand Authenticated",
+    "chatBotType": "CUSTOMER_FACING_BOT",
+    "status": "NEW",
+    "getStartedButtonPayload": "hi",
+    "creationTime": 1683704594061,
+    "modificationTime": 1707112375684,
+    "demo": false,
+    "skipNLP": false,
+    "language": "en-US",
+    "botAttributes": {
+      "ENABLE_AGENT_ANNOTATIONS": "false",
+      "ENABLE_DEBUG": "true",
+      "PCS_FALLBACK_LIMIT": "3",
+      "SMALL_TALK_ENABLED": "false",
+      "URL_SHORTENING_ENABLED": "false"
+    },
+    "sessionLength": 0,
+    "passThroughMode": false,
+    "transcriptDisabled": false,
+    "version": "2",
+    "publicBot": false,
+    "transferGroupId": "eeb12341-2ea7-45ce-9ad5-a04541e5fe17",
+    "channel": "MESSAGING",
+    "readOnly": false,
+    "smallTalkEnabled": false
+  },
+  "responder": [],
+  "requiredContext": [],
+  "conversationMessage": [
+    {
+      "id": "1c071888901e2a4b543a5f28daed22fc0ef86ee0",
+      "chatBotId": "9056a814-6a91-473b-9e31-0d6e4785225a",
+      "userInputRequired": false,
+      "name": "fallback_starter",
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "STATIC",
+        "results": {
+          "type": "TEXT",
+          "tile": {
+            "tileData": [
+              {
+                "text": "Sorry, I am not able to understand.",
+                "buttons": [],
+                "quickReplyList": []
+              }
+            ]
+          }
+        }
+      },
+      "group": "e55cb699-5e80-45bd-8992-1d836045f746",
+      "status": "ACTIVE",
+      "responseMatches": [
+        {
+          "conditions": [],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "TEXT"
+    },
+    {
+      "id": "54338d04b8b21764c95af4dbeb2bbc6fbffd4207",
+      "chatBotId": "9056a814-6a91-473b-9e31-0d6e4785225a",
+      "userInputRequired": false,
+      "name": "text_4",
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "STATIC",
+        "results": {
+          "type": "TEXT",
+          "tile": {
+            "tileData": [
+              {
+                "text": "{$botContext.fullName}",
+                "buttons": [],
+                "quickReplyList": []
+              }
+            ]
+          }
+        }
+      },
+      "preProcessMessage": "var personalInfo = botContext.getLPUserPersonalInfo();\nbotContext.printDebugMessage('PERSONAL INFO:'+personalInfo);\nif(personalInfo){\n    var fullName = personalInfo.firstname+\" \"+personalInfo.lastname;\n    botContext.printDebugMessage('Full Name: '+fullName);\n    botContext.setBotVariable(\"fullName\",fullName,true,false);\n}",
+      "group": "8328fd1b-fb72-49f6-a8ea-f8d67decfc19",
+      "status": "ACTIVE",
+      "required": true,
+      "nextMessageId": "e0c3c599362616d8d15c24d34527bf1dc0efd70c",
+      "prevMessageId": "c2ed806e4c7b430c66bacb6cccaa883ec177439b",
+      "responseMatches": [
+        {
+          "conditions": [],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "TEXT"
+    },
+    {
+      "id": "c2ed806e4c7b430c66bacb6cccaa883ec177439b",
+      "chatBotId": "9056a814-6a91-473b-9e31-0d6e4785225a",
+      "userInputRequired": false,
+      "name": "dialog_starter",
+      "pattern": [
+        "*"
+      ],
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "STATIC",
+        "results": {
+          "type": "DIALOG_STARTER",
+          "tile": {
+            "tileData": [
+              {
+                "buttons": [],
+                "quickReplyList": []
+              }
+            ],
+            "sampleUserInput": "Hello!!"
+          }
+        }
+      },
+      "preProcessMessage": "var d = new Date(); \nif (botContext.getBotVariable('lastVisited') != null) { \n    botContext.setTriggerNextMessage('Welcome Back');\n} else { \n    botContext.setBotVariable('lastVisited',d,false,true); \n}",
+      "group": "8328fd1b-fb72-49f6-a8ea-f8d67decfc19",
+      "status": "ACTIVE",
+      "nextMessageId": "54338d04b8b21764c95af4dbeb2bbc6fbffd4207",
+      "responseMatches": [
+        {
+          "name": "RULE_1",
+          "conditions": [],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "e0c3c599362616d8d15c24d34527bf1dc0efd70c"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "DIALOG_STARTER"
+    },
+    {
+      "id": "e0c3c599362616d8d15c24d34527bf1dc0efd70c",
+      "chatBotId": "9056a814-6a91-473b-9e31-0d6e4785225a",
+      "userInputRequired": false,
+      "name": "escalation_4",
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "DYNAMIC",
+        "results": {
+          "type": "ESCALATION",
+          "tile": {
+            "tileData": [
+              {
+                "text": "BLANK_MESSAGE",
+                "buttons": [],
+                "quickReplyList": [],
+                "escalation": {
+                  "agentSkillId": "4112882938",
+                  "tangoContextEnabled": true
+                }
+              }
+            ]
+          }
+        }
+      },
+      "group": "8328fd1b-fb72-49f6-a8ea-f8d67decfc19",
+      "status": "ACTIVE",
+      "required": true,
+      "prevMessageId": "54338d04b8b21764c95af4dbeb2bbc6fbffd4207",
+      "responseMatches": [
+        {
+          "name": "RULE_1",
+          "conditions": [],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "none"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "ESCALATION",
+      "changeResponse": {
+        "enabled": true
+      },
+      "cancelResponse": {
+        "enabled": true
+      }
+    }
+  ],
+  "menus": [],
+  "groups": [
+    {
+      "chatBotId": "9056a814-6a91-473b-9e31-0d6e4785225a",
+      "id": "8328fd1b-fb72-49f6-a8ea-f8d67decfc19",
+      "name": "1 Welcome",
+      "creationTime": "2023-05-10 03:43:14",
+      "modificationTime": "2023-05-10 03:43:14",
+      "dialogType": "DIALOG",
+      "status": "ENABLED",
+      "disambiguteOnlySelectedDomains": false
+    },
+    {
+      "chatBotId": "9056a814-6a91-473b-9e31-0d6e4785225a",
+      "id": "e55cb699-5e80-45bd-8992-1d836045f746",
+      "name": "2 Fallback",
+      "creationTime": "2023-05-10 03:43:14",
+      "modificationTime": "2023-05-10 03:43:14",
+      "dialogType": "FALLBACK_DIALOG",
+      "status": "ENABLED",
+      "disambiguteOnlySelectedDomains": false
+    }
+  ],
+  "globalFunctions": {
+    "chatBotId": "9056a814-6a91-473b-9e31-0d6e4785225a",
+    "methods": "function __initConversation() { \n}",
+    "creationTime": "2023-06-12 07:29:06",
+    "modificationTime": "2023-06-12 07:31:02"
+  },
+  "platforms": [
+    {
+      "id": "aa78efe5bf7c3444cc3e01548523b3513ea18cea",
+      "chatbotId": "9056a814-6a91-473b-9e31-0d6e4785225a",
+      "integrationType": "HTMLCLIENT",
+      "platform": "HTMLCLIENT",
+      "status": "NEW"
+    }
+  ],
+  "associatedDomains": [],
+  "dialogTemplates": []
+}

@@ -1,102 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link href="style.css" rel="stylesheet" />
+
+
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <title>Elegant Gems</title>
- <!-- BEGIN LivePerson Monitor. -->
+
+
+  <title>Book Hub</title>
+
+<!-- BEGIN LivePerson Monitor. -->
 <script type="text/javascript">window.lpTag=window.lpTag||{},'undefined'==typeof window.lpTag._tagCount?(window.lpTag={wl:lpTag.wl||null,scp:lpTag.scp||null,site:'66751472'||'',section:lpTag.section||'',tagletSection:lpTag.tagletSection||null,autoStart:lpTag.autoStart!==!1,ovr:lpTag.ovr||{},_v:'1.10.0',_tagCount:1,protocol:'https:',events:{bind:function(t,e,i){lpTag.defer(function(){lpTag.events.bind(t,e,i)},0)},trigger:function(t,e,i){lpTag.defer(function(){lpTag.events.trigger(t,e,i)},1)}},defer:function(t,e){0===e?(this._defB=this._defB||[],this._defB.push(t)):1===e?(this._defT=this._defT||[],this._defT.push(t)):(this._defL=this._defL||[],this._defL.push(t))},load:function(t,e,i){var n=this;setTimeout(function(){n._load(t,e,i)},0)},_load:function(t,e,i){var n=t;t||(n=this.protocol+'//'+(this.ovr&&this.ovr.domain?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site);var o=document.createElement('script');o.setAttribute('charset',e?e:'UTF-8'),i&&o.setAttribute('id',i),o.setAttribute('src',n),document.getElementsByTagName('head').item(0).appendChild(o)},init:function(){this._timing=this._timing||{},this._timing.start=(new Date).getTime();var t=this;window.attachEvent?window.attachEvent('onload',function(){t._domReady('domReady')}):(window.addEventListener('DOMContentLoaded',function(){t._domReady('contReady')},!1),window.addEventListener('load',function(){t._domReady('domReady')},!1)),'undefined'===typeof window._lptStop&&this.load()},start:function(){this.autoStart=!0},_domReady:function(t){this.isDom||(this.isDom=!0,this.events.trigger('LPT','DOM_READY',{t:t})),this._timing[t]=(new Date).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],hooks:lpTag.hooks||[],identities:lpTag.identities||[],ev:lpTag.ev||[]},lpTag.init()):window.lpTag._tagCount+=1;</script>
 <!-- END LivePerson Monitor. -->
 </head>
 <body>
   <!--Header-->
   <header>
+
     <!-- Nav -->
     <div class="nav container">
-      <a href="#" class="logo">Elegant Jwellery</a>
+      <a href="#" class="logo">My Book Hub</a>
       <!--Cart-Icon-->
+      <button class="LogoutButton" onclick="window.location.href = 'https://shwetasingh0111.github.io/LPCertificationUnAuth/';">
+        Logout
+      </button>
     
       <span class="CartTotalDisplay">
-        <img class="CartImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2j9jM3f_wOriM4aG7cZ_i5ogvncXsRRxtULxhhtXt6A&s" title="Cart Total">
+        <img class="CartImg" src="img/cart.png" title="Cart Total">
       </span>
       <span id='cartValue'>0</span>
       <span id="totalCost">0</span> <!--HIDDEN-->
       <input id="totalCost" type="hidden" name="totalCost" value="0">
+  
     </div>
+
   </header>
   <!--Shop-->
   <section class="shop container">
+    <!--     <h2 class="section-title">Shop Products</h2> -->
+    <!--Content-->
     <div class="shop-content">
-      <!-- Replace these boxes with Jewelry items -->
-      <!--Box-1-->
+            <!--Box-1-->
       <div class="product-box">
-        <img src="https://d25g9z9s77rn4i.cloudfront.net/uploads/product/1065/1659164475_6677992b9259277d9d33.jpg" alt="Elegant Necklace" class="product-img">
-        <h2 class="product-title">Necklace</h2>
-        <span class="price">₹ 2000</span>
+        <img src="img/product1.png" alt="" class="product-img">
+        <h2 class="product-title">Meluha</h2>
+        <span class="price"> ₹ 900</span>
         <p><button id="addToCart1">Add to Cart</button></p>
       </div>
       <!--Box-2-->
       <div class="product-box">
-        <img src="https://aferando.com/cdn/shop/files/GoldPlatedPearlGrapeBranchStudEarrings_650x.jpg?v=1688396649" alt="Chic Earrings" class="product-img">
-        <h2 class="product-title">Earrings</h2>
-        <span class="price">₹ 1200</span>
+        <img src="img/product2.png" alt="" class="product-img">
+        <h2 class="product-title">The Secret</h2>
+        <span class="price"> ₹ 600</span>
         <p><button id="addToCart2">Add to Cart</button></p>
       </div>
-
       <!--Box-3-->
+
       <div class="product-box">
-        <img src="https://www.jewelegance.com/cdn/shop/products/JG-1901-3099.jpg?v=1675729959" alt="Bracelet" class="product-img">
-        <h2 class="product-title">Bracelet</h2>
-        <span class="price">₹ 1500</span>
+        <img src="img/product3.png" alt="" class="product-img">
+        <h2 class="product-title">You Can Win</h2>
+        <span class="price"> ₹ 400</span>
         <p><button id="addToCart3">Add to Cart</button></p>
       </div>
-
       <!--Box-4-->
       <div class="product-box">
-        <img src="https://emcgtdx36wv.exactdn.com/wp-content/uploads/2022/07/CATEGORY_RING_IMAGE_Header.jpg" alt="Ring" class="product-img">
-        <h2 class="product-title">Ring</h2>
-        <span class="price">₹ 120</span>
+        <img src="img/product4.png" alt="" class="product-img">
+        <h2 class="product-title">Inner Engineering</h2>
+        <span class="price"> ₹ 500</span>
         <p><button id="addToCart4">Add to Cart</button></p>
       </div>
-
-      <!--Box-5-->
-      <div class="product-box">
-        <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw9b64c751/images/hi-res/50O2PTVSF1A02.jpg?sw=640&sh=640" alt="Bangle" class="product-img">
-        <h2 class="product-title">Bangle</h2>
-        <span class="price">₹ 500</span>
-        <p><button id="addToCart5">Add to Cart</button></p>
-      </div>
-      <!-- Additional Jewelry Boxes Here -->
     </div>
   </section>
-  <script>
-    //lpTag.identities.push(identityFn);
-    // function identityFn(callback) {
-    //   callback({
-    //     "sub": "997670",
-    //     "iss": "https://jwt.io/",
-    //     "name":"Sariga",
-    //     "aud": "acc:qa57221676",
-    //     "admin":true,
-    //     "exp": 1992025992,
-    //     "iat": 1682030954,
-    //     "acr": "loa1"
-    //   });
-    // }
 
-    // var id_token ="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTc2NzAiLCJpc3MiOiJodHRwczovL2p3dC5pby8iLCJuYW1lIjoiU2FyaWdhIiwiYXVkIjoiYWNjOnFhNTcyMjE2NzYiLCJhZG1pbiI6dHJ1ZSwiZXhwIjoxOTkyMDI1OTkyLCJpYXQiOjE2ODIwMzA5NTQsImFjciI6ImxvYTEifQ.f-7hyzU2Jp8rfIUamary5keIdkMfAKUl2jkeDmxcI7SFuy8Y0zj5spxsO0WDC18CCrIJe8IsVxFnCZ8NB9RmHMrM7QhNM-Bcsqbq4UUbljYOoRxe7y9CgK-v9F_8x_Il2-tlyhGQ_a1S0yuV9Kng6yK5j97y2YUC0iTRpHIJzhXbrmvzXQo1yiE3UF5H0pfPaNFM8ExxfKlIaZIoD_n-6uPrInB3MpvYF0uTyVfzZBK2A2NVMN3NfAvO_7k5kkI_dJldpPW_u3Krc0g14KkJPzsKVzWychhGB73rjOSFGMxssXtx8rHr4jZcBNc4oScU__IjArBsQYiIDQ1XzjCvdA";
+  <script>
+    lpTag.identities.push(identityFn);
+    function identityFn(callback) {
+      callback({
+        "sub": "997670",
+        "iss": "https://jwt.io/",
+        "name":"Sariga",
+        "aud": "acc:qa57221676",
+        "admin":true,
+        "exp": 1992025992,
+        "iat": 1682030954,
+        "acr": "loa1"
+      });
+    }
+
+    var id_token ="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTc2NzAiLCJpc3MiOiJodHRwczovL2p3dC5pby8iLCJuYW1lIjoiU2FyaWdhIiwiYXVkIjoiYWNjOnFhNTcyMjE2NzYiLCJhZG1pbiI6dHJ1ZSwiZXhwIjoxOTkyMDI1OTkyLCJpYXQiOjE2ODIwMzA5NTQsImFjciI6ImxvYTEifQ.f-7hyzU2Jp8rfIUamary5keIdkMfAKUl2jkeDmxcI7SFuy8Y0zj5spxsO0WDC18CCrIJe8IsVxFnCZ8NB9RmHMrM7QhNM-Bcsqbq4UUbljYOoRxe7y9CgK-v9F_8x_Il2-tlyhGQ_a1S0yuV9Kng6yK5j97y2YUC0iTRpHIJzhXbrmvzXQo1yiE3UF5H0pfPaNFM8ExxfKlIaZIoD_n-6uPrInB3MpvYF0uTyVfzZBK2A2NVMN3NfAvO_7k5kkI_dJldpPW_u3Krc0g14KkJPzsKVzWychhGB73rjOSFGMxssXtx8rHr4jZcBNc4oScU__IjArBsQYiIDQ1XzjCvdA";
     
-    // function lpGetAuthenticationToken(callback) {
-    //   console.log("LP asked for id_token or auth code in Code Flow");
-    //   // Do your magic…
-    //   // On Success
-    //   callback(id_token);
-    //   // On Failure
-    //   callback("", "error reason");
-    // }
+    function lpGetAuthenticationToken(callback) {
+      console.log("LP asked for id_token or auth code in Code Flow");
+      // Do your magic…
+      // On Success
+      callback(id_token);
+      // On Failure
+      callback("", "error reason");
+    }
 
     // EVENT LISTNER CART VALUE
 
@@ -107,7 +113,6 @@
       var addButton2 = document.getElementById('addToCart2');
       var addButton3 = document.getElementById('addToCart3');
       var addButton4 = document.getElementById('addToCart4');
-      var addButton5 = document.getElementById('addToCart5');
 
 
       addButton1.addEventListener('click', function () {
@@ -162,19 +167,6 @@
         myFunctionSelect();
       });
 
-      addButton5.addEventListener('click', function () {
-        console.log(cartValueElement.innerHTML);
-        var currentCartValue = parseInt(cartValueElement.innerHTML);
-        var newCartValue = currentCartValue + 1;
-        cartValueElement.innerHTML = newCartValue;
-
-        console.log("CostVALUE" + totalCostElement.innerHTML);
-        var currentCostValue = parseInt(totalCostElement.innerHTML);
-        var newtotalCost = currentCostValue + 500;
-        totalCostElement.innerHTML = newtotalCost;
-        myFunctionSelect();
-      });
-
 
 
     });
@@ -207,6 +199,6 @@
     }
 
   </script>
-  <!-- Your existing scripts here -->
 </body>
+
 </html>

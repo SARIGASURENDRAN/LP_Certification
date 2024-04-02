@@ -22,6 +22,9 @@ img {
 
 body {
   color: var(--text-color);
+  background-image: url('https://img.freepik.com/free-photo/top-view-engagement-rings-with-copy-space_23-2148483464.jpg'); /* Add your image URL */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the background image */
 }
 
 .container {
@@ -170,7 +173,7 @@ header {
   display: none;
 }
 
-.LoginButton {
+.LogoutButton {
   background-color: steelblue;
   border-radius: 5%;
   border: 1px solid steelblue;
@@ -189,5 +192,5 @@ header {
   top:8;
 }
 .CartImg{
-  height: 150px;
+  height: 120px;
 }

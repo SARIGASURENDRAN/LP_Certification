@@ -1,76 +1,102 @@
- body {
-    background-color: #05297cf0;
-  } 
+/* Google Fonts Import for aesthetics */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap');
 
-h2 {text-align: center;}
-
-
-  div.first {
-    
-    margin: auto;
-    text-align: center;
-    color:rgb(193, 202, 231);
-
-  }
-
-  .container {
-    text-align: center;
-    margin: auto;
-    padding: 1px;
+body, html {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F3FF; /* Fallback color */
+  background-image: url('https://png.pngtree.com/background/20210711/original/pngtree-pink-peach-flower-vector-background-picture-image_1119195.jpg'); /* Add your image URL */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the background image */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  filter: brightness(0.9); /* Optionally adjust brightness for better readability */
 }
 
-div.second {
-    margin: auto;
-    padding: 5px;
-    text-align: center;
-    color:White;
+/* Styling the main container for centered content */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for readability */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Responsive width */
+}
 
+/* Flexbox setup for the search form */
+.search-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+input[type="search"], button {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #9575CD;
+  background: none;
+  color: #5E35B1;
+  outline: none;
+}
+
+input[type="search"] {
+  border-radius: 4px 0 0 4px;
+  flex-grow: 1;
+}
+
+button {
+  border-radius: 0 4px 4px 0;
+  background-color: #9575CD;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #7E57C2;
+}
+
+/* Styling for the movie information display */
+.info-section {
+  text-align: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Adding background for readability */
+  color: #333;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-value {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for improved readability */
+}
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #5E35B1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for heading */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
   }
 
-  .div2 {
-    margin: auto;
-    width: 100px;
-    height: 1x;
-    padding: 10px;
-    border: 1px solid rgb(6, 6, 6);
-    text-align: center;
-    color:White;
-
+  input[type="search"], button {
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 4px;
   }
-
-div.Third {
-    color:White;
-     margin: auto;
-    padding: 5px;
-    text-align: center;
-  }
-
-
-  .div3 {
-    color:White;
-    margin: auto;
-    width: 100px;
-    height: 1x;
-    padding: 10px;
-    border: 1px solid rgb(12, 12, 12);
-  }
-
-  div.Fourth {
-    margin: auto;
-   padding: 5px;
-   text-align: center;
-   color:White;
-
- }
-
- 
- .div4 {
-    margin: auto;
-    width: 160px;
-    height: 1x;
-    padding: 10px;
-    border: 1px solid rgb(12, 12, 12);
-    text-align: center;
-    color:White;
-
-  }
+}

@@ -10,7 +10,11 @@ lpTag.agentSDK =
       m(a && a.visitorBlurredCallback, x.visitorBlurred);
       if (r)
         try {
-          r.command({ appName: u.manager, cmdName: v.initialize, data: {} });
+          r.command({
+            appName: u.manager,
+            cmdName: v.initialize,
+            data: {},
+          });
         } catch (b) {
           p("Error initializing communication. The error: " + b);
         }
@@ -31,7 +35,13 @@ lpTag.agentSDK =
         q('Calling "get" on the following key: ' + a);
         try {
           r.request(
-            { appName: u.manager, reqName: w.get, data: { key: a } },
+            {
+              appName: u.manager,
+              reqName: w.get,
+              data: {
+                key: a,
+              },
+            },
             function (a, b) {
               a && e(a);
               d(b);
@@ -67,9 +77,19 @@ lpTag.agentSDK =
       if (r && a) {
         q('Calling "bind" on the following key: ' + a);
         try {
-          r.bind({ appName: u.manager, eventName: a, func: d });
+          r.bind({
+            appName: u.manager,
+            eventName: a,
+            func: d,
+          });
           r.command(
-            { appName: u.manager, cmdName: v.bind, data: { key: a } },
+            {
+              appName: u.manager,
+              cmdName: v.bind,
+              data: {
+                key: a,
+              },
+            },
             e
           );
         } catch (f) {
@@ -99,9 +119,19 @@ lpTag.agentSDK =
       if (r && a) {
         q('Calling "unbind" on the following key: ' + a);
         try {
-          r.unbind({ appName: u.manager, eventName: a, func: d });
+          r.unbind({
+            appName: u.manager,
+            eventName: a,
+            func: d,
+          });
           r.command(
-            { appName: u.manager, cmdName: v.unbind, data: { key: a } },
+            {
+              appName: u.manager,
+              cmdName: v.unbind,
+              data: {
+                key: a,
+              },
+            },
             e
           );
         } catch (f) {
@@ -130,7 +160,14 @@ lpTag.agentSDK =
       if (r && a) {
         q('Calling "command" with the following cmdName: ' + a);
         try {
-          r.command({ appName: u.manager, cmdName: a, data: b }, d);
+          r.command(
+            {
+              appName: u.manager,
+              cmdName: a,
+              data: b,
+            },
+            d
+          );
         } catch (e) {
           p(
             'Error calling "command" with the following cmdName: ' +
@@ -158,9 +195,16 @@ lpTag.agentSDK =
       if (r && a && b && Object.keys(b).length) {
         q('Calling "request" with the following reqName: ' + a);
         try {
-          r.request({ appName: u.manager, reqName: a, data: b }, function (a) {
-            return a ? f(a) : e();
-          });
+          r.request(
+            {
+              appName: u.manager,
+              reqName: a,
+              data: b,
+            },
+            function (a) {
+              return a ? f(a) : e();
+            }
+          );
         } catch (g) {
           p(
             'Error calling "request" with the following reqName: ' +
@@ -211,7 +255,11 @@ lpTag.agentSDK =
       if (a && r && b) {
         q("binding on " + b);
         try {
-          r.bind({ appName: u.events, eventName: b, func: n(a, b + " event") });
+          r.bind({
+            appName: u.events,
+            eventName: b,
+            func: n(a, b + " event"),
+          });
         } catch (c) {
           p("Error binding on " + b + ". The error: " + JSON.stringify(c));
         }
@@ -252,7 +300,10 @@ lpTag.agentSDK =
     var r,
       s = "agentSDK",
       t = "1.0.1",
-      u = { manager: "iFrame manager", events: "iFrame events" },
+      u = {
+        manager: "iFrame manager",
+        events: "iFrame events",
+      },
       v = {
         bind: "Bind",
         unbind: "Unbind",
@@ -484,7 +535,12 @@ lpTag.agentSDK =
       }
       function d(a, b, e) {
         var f = a;
-        "string" == typeof a && (f = { appName: a, eventName: b, func: e });
+        "string" == typeof a &&
+          (f = {
+            appName: a,
+            eventName: b,
+            func: e,
+          });
         f.appName = f.appName || l;
         "*" !== l &&
           ("string" != typeof a ||
@@ -554,7 +610,12 @@ lpTag.agentSDK =
       }
       function g(a, b, d) {
         var e = a;
-        "string" == typeof a && (e = { eventName: b, appName: a, data: d });
+        "string" == typeof a &&
+          (e = {
+            eventName: b,
+            appName: a,
+            data: d,
+          });
         if ("*" !== l) {
           e.appName = e.appName || l;
           "string" != typeof a ||
@@ -572,7 +633,10 @@ lpTag.agentSDK =
         if (f.length > 0)
           for (var g = 0; g < f.length; g++) {
             var k = e.passDataByRef ? e.data : c.cloneEventData(e.data),
-              m = { appName: e.appName, eventName: e.eventName },
+              m = {
+                appName: e.appName,
+                eventName: e.eventName,
+              },
               n = f[g];
             n.aSync || (k && k.aSync)
               ? setTimeout(h(n, k, m), 0)
@@ -695,7 +759,10 @@ lpTag.agentSDK =
     function f(a, b) {
       return !((b && "*" === b) || (a.appName && "*" === a.appName));
     }
-    var g = { bind: e, valid: f };
+    var g = {
+      bind: e,
+      valid: f,
+    };
     d || (b.CommandsUtil = b.CommandsUtil || g);
     return g;
   }
@@ -898,7 +965,10 @@ lpTag.agentSDK =
         if (f.length > 0)
           for (var g = 0; g < f.length; g++) {
             var j = a.passDataByRef ? a.data : c.cloneEventData(a.data),
-              l = { appName: a.appName, reqName: a.reqName },
+              l = {
+                appName: a.appName,
+                reqName: a.reqName,
+              },
               m = f[g];
             try {
               e =
@@ -1086,7 +1156,11 @@ lpTag.agentSDK =
     c.prototype = new b();
     return c;
   }
-  var d = { OPEN: 0, HALF_OPEN: 1, CLOSED: 2 },
+  var d = {
+      OPEN: 0,
+      HALF_OPEN: 1,
+      CLOSED: 2,
+    },
     e = {
       FAILURE: "failure",
       SUCCESS: "success",
@@ -1157,7 +1231,11 @@ lpTag.agentSDK =
         c += a + this.buckets[f][e.SUCCESS];
       }
       b = (d / (c > 0 ? c : 1)) * 100;
-      return { total: c, error: d, percent: b };
+      return {
+        total: c,
+        error: d,
+        percent: b,
+      };
     }
     function j() {
       this.timer && clearTimeout(this.timer);
@@ -1206,7 +1284,9 @@ lpTag.agentSDK =
       }.bind(this);
     }
     function p(a, b) {
-      var c = { done: !1 },
+      var c = {
+          done: !1,
+        },
         d = o.call(this, e.SUCCESS, c),
         f = o.call(this, e.FAILURE, c),
         g = o.call(this, e.TIMEOUT, c);
@@ -1297,7 +1377,10 @@ lpTag.agentSDK =
         for (; f < this.stores.length && !e; ) {
           if (this.stores[f].autoload && this.stores[f].load) {
             e = !0;
-            this.stores[f].load({ onitem: b, oncomplete: a.oncomplete });
+            this.stores[f].load({
+              onitem: b,
+              oncomplete: a.oncomplete,
+            });
           }
           f++;
         }
@@ -1337,13 +1420,18 @@ lpTag.agentSDK =
         for (var e = 0; e < this.stores.length; e++)
           this.stores[e][a]
             ? this.stores[e][a](b, c, d)
-            : this.stores[e].save && this.stores[e].save({ items: this.cache });
+            : this.stores[e].save &&
+              this.stores[e].save({
+                items: this.cache,
+              });
     }
     function g(a, b, c, d) {
       var e, g;
       if (0 === this.max || this.length < this.max) {
         e = isNaN(c) ? this.ttl : parseInt(c, 10);
-        this.cache[a] = { item: b };
+        this.cache[a] = {
+          item: b,
+        };
         this.length++;
         if (e) {
           g = new Date().getTime() + e;
@@ -1376,7 +1464,13 @@ lpTag.agentSDK =
           }
       this.timer = setTimeout(h.bind(this), this.interval);
     }
-    return { initialize: a, get: b, set: c, remove: d, removeAll: e };
+    return {
+      initialize: a,
+      get: b,
+      set: c,
+      remove: d,
+      removeAll: e,
+    };
   })();
   a.Cacher = a.Cacher || b;
 });
@@ -1647,7 +1741,10 @@ lpTag.agentSDK =
         return this.origin;
       }
       function h(a) {
-        return { port: this.portId, message: a };
+        return {
+          port: this.portId,
+          message: a,
+        };
       }
       function i(a) {
         var b;
@@ -1655,7 +1752,10 @@ lpTag.agentSDK =
           try {
             b = this.deserialize(a.data);
             if (b.port && 0 === b.port.indexOf(f))
-              return { origin: a.origin, data: b.message };
+              return {
+                origin: a.origin,
+                data: b.message,
+              };
           } catch (d) {
             c.log(
               "Error while trying to deserialize the message",
@@ -1665,7 +1765,11 @@ lpTag.agentSDK =
           }
         return b || a;
       }
-      return { initialize: b, postMessage: d, receive: e };
+      return {
+        initialize: b,
+        postMessage: d,
+        receive: e,
+      };
     })();
     d || (b.PostMessageChannelPolyfill = b.PostMessageChannelPolyfill || e);
     return e;
@@ -2108,7 +2212,11 @@ lpTag.agentSDK =
         !1 === this.useObjects && (b += "&lpPMDeSerialize=true");
         a.setAttribute("src", b);
       }
-      return { initialize: b, postMessage: p, dispose: o };
+      return {
+        initialize: b,
+        postMessage: p,
+        dispose: o,
+      };
     })();
     e || (b.PostMessageChannel = f);
     return f;
@@ -2134,7 +2242,11 @@ lpTag.agentSDK =
       this.initialize(a);
       return void 0;
     }
-    var e = { RESOLVE: "resolve", REJECT: "reject", PROGRESS: "progress" };
+    var e = {
+      RESOLVE: "resolve",
+      REJECT: "reject",
+      PROGRESS: "progress",
+    };
     d.prototype = (function () {
       function a(a) {
         if (!this.initialized) {
@@ -2150,7 +2262,11 @@ lpTag.agentSDK =
         }
       }
       function b(a, b, c) {
-        this.queue.push({ resolve: a, reject: b, progress: c });
+        this.queue.push({
+          resolve: a,
+          reject: b,
+          progress: c,
+        });
       }
       function c(a) {
         h.call(this, e.RESOLVE, a);
@@ -2190,7 +2306,13 @@ lpTag.agentSDK =
           delete this.queue;
         }
       }
-      return { initialize: a, then: b, resolve: c, reject: d, progress: f };
+      return {
+        initialize: a,
+        then: b,
+        resolve: c,
+        reject: d,
+        progress: f,
+      };
     })();
     d.polyfill = function () {
       a.Promise || (a.Promise = d);
@@ -2258,7 +2380,11 @@ lpTag.agentSDK =
           return void 0;
         };
       }
-      return { initialize: a, toEvent: b, toMessage: d };
+      return {
+        initialize: a,
+        toEvent: b,
+        toMessage: d,
+      };
     })();
     d || (b.PostMessageMapper = b.PostMessageMapper || e);
     return e;
@@ -2414,7 +2540,11 @@ lpTag.agentSDK =
         var b, c;
         this.eventChannel =
           a.eventChannel ||
-          new d({ events: a.events, commands: a.commands, reqres: a.reqres });
+          new d({
+            events: a.events,
+            commands: a.commands,
+            reqres: a.reqres,
+          });
         this.mapper = new i(this.eventChannel);
         b = this.mapper.toEvent.bind(this.mapper);
         c = L(b).bind(this);
@@ -2551,7 +2681,11 @@ lpTag.agentSDK =
           var f,
             g,
             h = d;
-          d instanceof Error && (h = { type: "Error", message: d.message });
+          d instanceof Error &&
+            (h = {
+              type: "Error",
+              message: d.message,
+            });
           g = [a, m.RETURN, h];
           m.REQUEST === b && g.push(e);
           f = this.mapper.toMessage.apply(this.mapper, g);
@@ -2608,7 +2742,13 @@ lpTag.agentSDK =
                   "PostMessageCourier"
                 );
                 if (G(i)) {
-                  f = [h, m.RETURN, { error: k.toString() }];
+                  f = [
+                    h,
+                    m.RETURN,
+                    {
+                      error: k.toString(),
+                    },
+                  ];
                   g = this.mapper.toMessage.apply(this.mapper, f);
                   E.call(this, g, b.source);
                 }
@@ -2657,8 +2797,7 @@ if (value) {
 function myFunction() {
   var x = document.getElementById("mySearch");
   console.log(x.value);
-  var x = x.value;
-  //var defaultVal = x.defaultVal;
+  var x = x.value; //var defaultVal = x.defaultVal;
   //var currentVal = defaultVal;
   //console.log(currentVal);
   ABC = `"https://www.omdbapi.com/?t=${x}&apikey=cf60bf6d"`;
@@ -2694,36 +2833,29 @@ async function getapi() {
   document.getElementById("director").innerHTML = Director;
 
   pushData(myObj.Title, myObj.Released, myObj.Director);
-
-  // {
-  //     var notificationHandler = function(data) {
-  //     // Do something with the notifications
-  //     };
-
-  // }
-  //     lpTag.agentSDK.init({
-  //     notificationCallback: notificationHandler
-  // });
-
-  //     var notifyWhenDone = function(err) {
-  //         if (err) {
-  //             // Do something with the error
-  //         }
-  //         // called when the command is completed successfully,
-  //         // or when the action terminated with an error.
-  //     };
-
-  //     var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
-  //     var data = {text: "Some text"+myObj.Title+" "+myObj.Released+" "+myObj.Director};
-
-  //     lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 }
+// {
+//     var notificationHandler = function(data) {
+//     // Do something with the notifications
+//     };
+// }
+//     lpTag.agentSDK.init({
+//     notificationCallback: notificationHandler
+// });
+//     var notifyWhenDone = function(err) {
+//         if (err) {
+//             // Do something with the error
+//         }
+//         // called when the command is completed successfully,
+//         // or when the action terminated with an error.
+//     };
+//     var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
+//     var data = {text: "Some text"+myObj.Title+" "+myObj.Released+" "+myObj.Director};
+//     lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 
 function pushData(title, released, director) {
   {
-    var notificationHandler = function (data) {
-      // Do something with the notifications
-    };
+    var notificationHandler = function (data) {};
   }
   lpTag.agentSDK.init({
     notificationCallback: notificationHandler,
@@ -2731,11 +2863,10 @@ function pushData(title, released, director) {
 
   var notifyWhenDone = function (err) {
     if (err) {
-      // Do something with the error
     }
-    // called when the command is completed successfully,
-    // or when the action terminated with an error.
   };
+  // called when the command is completed successfully,
+  // or when the action terminated with an error.
 
   var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
   var data = {

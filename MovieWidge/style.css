@@ -1,18 +1,16 @@
 body {
-  background-color: #123456; /* Updated background color */
-  background-image: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8534.jpg'); /* Adds a background image */
-  background-size: cover; /* Ensures the image covers the entire body without repeating */
-  background-position: center; /* Centers the background image */
-}
+  background-color: #05297cf0;
+} 
 
-h2 {
-  text-align: center;
-}
+h2 {text-align: center;}
+
 
 div.first {
+  
   margin: auto;
   text-align: center;
-  color: rgb(193, 202, 231);
+  color:rgb(193, 202, 231);
+
 }
 
 .container {
@@ -25,48 +23,54 @@ div.second {
   margin: auto;
   padding: 5px;
   text-align: center;
-  color: White;
+  color:White;
+
 }
 
 .div2 {
   margin: auto;
   width: 100px;
-  height: 1x; /* Corrected from 1x to 1px */
+  height: 1x;
   padding: 10px;
   border: 1px solid rgb(6, 6, 6);
   text-align: center;
-  color: White;
+  color:White;
+
 }
 
 div.Third {
-  color: White;
-  margin: auto;
+  color:White;
+   margin: auto;
   padding: 5px;
   text-align: center;
 }
 
+
 .div3 {
-  color: White;
+  color:White;
   margin: auto;
   width: 100px;
-  height: 1x; /* Corrected from 1x to 1px */
+  height: 1x;
   padding: 10px;
   border: 1px solid rgb(12, 12, 12);
 }
 
 div.Fourth {
   margin: auto;
-  padding: 5px;
-  text-align: center;
-  color: White;
+ padding: 5px;
+ text-align: center;
+ color:White;
+
 }
+
 
 .div4 {
   margin: auto;
   width: 160px;
-  height: 1x; /* Corrected from 1x to 1px */
+  height: 1x;
   padding: 10px;
   border: 1px solid rgb(12, 12, 12);
   text-align: center;
-  color: White;
+  color:White;
+
 }
